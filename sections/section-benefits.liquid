@@ -1,0 +1,224 @@
+{{ 'section-benefits.css' | asset_url | stylesheet_tag }}
+{{ 'bootstrap.min.css' | asset_url | stylesheet_tag }}
+
+<section class="benefits-section">
+    <div class="container-fluid"> 
+			<h2 class="h2 title benefit-title">{{ section.settings.title }}</h2>
+			<h4 class="h4">  {{section.settings.subtitle }}</h4>
+            <div class="row">
+                <div class="col-xs-6 col-sm-2 col-md-2 col-md-offset-2 col-sm-offset-2">
+                    <div class="gallery-item">
+                        <div class="image">
+                        {%if section.settings.image1 != blank %}
+                            <img src="{{ section.settings.image1 | img_url: 'master' }}" alt="{{ section.settings.image1.alt }}">
+                            
+                            {% else %}
+
+                                {% capture current%}{% cycle 1,2%}{% endcapture%}
+                                {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                            {% endif%}
+                        </div>
+                        <div class="content-gallery">
+                            <p>{{ section.settings.benefit1 }}</p>
+                        </div>
+                    </div> <!-- /.gallery-item -->
+                </div> <!-- /.col-md-2 -->
+                <div class="col-xs-6 col-sm-2 col-md-2">
+                    <div class="gallery-item">
+                        <div class="image">
+                        {%if section.settings.image2 != blank %}
+                            <img src="{{ section.settings.image2 | img_url: 'master' }}" alt="{{ section.settings.image2.alt }}">
+                            {% else %}
+                                {% capture current%}{% cycle 1,2%}{% endcapture%}
+                                {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                            {% endif%}
+                        </div>
+                        <div class="content-gallery">
+                            <p>{{ section.settings.benefit2 }}</p>
+                        </div>
+                    </div> <!-- /.gallery-item -->
+                </div> <!-- /.col-md-2 -->
+                <div class="col-xs-6 col-sm-2 col-md-2">
+                    <div class="gallery-item">
+                        <div class="image">
+                        {%if section.settings.image3 != blank %}
+                            <img src="{{ section.settings.image3 | img_url: 'master' }}" alt="{{ section.settings.image3.alt }}">
+                            {% else %}
+                                {% capture current%}{% cycle 1,2%}{% endcapture%}
+                                {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                            {% endif%}
+                        </div>
+                        <div class="content-gallery">
+                            <p>{{ section.settings.benefit3 }}</p>
+                        </div>
+                    </div> <!-- /.gallery-item -->
+                </div> <!-- /.col-md-2 -->
+                <div class="col-xs-6 col-sm-2 col-md-2" >
+                    <div class="gallery-item">
+                        <div class="image">
+                        {%if section.settings.image4 != blank %}
+                            <img src="{{ section.settings.image4 | img_url: 'master' }}" alt="{{ section.settings.image4.alt }}">
+                            {% else %}
+                                {% capture current%}{% cycle 1,2%}{% endcapture%}
+                                {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                            {% endif%}
+                        </div>
+                        <div class="content-gallery">
+                            <p>{{ section.settings.benefit4 }}</p>
+                        </div>
+                    </div> <!-- /.gallery-item -->
+                </div> <!-- /.col-md-2 -->
+            </div>
+            <div class="row">
+            <div class="col-xs-6 col-sm-2  col-md-2 col-md-offset-3 col-sm-offset-3">
+                <div class="gallery-item">
+                    <div class="image">
+                      {%if section.settings.image5 != blank %}
+                        <img src="{{ section.settings.image5 | img_url: 'master' }}" alt="{{ section.settings.image5.alt }}">
+                        {% else %}
+                            {% capture current%}{% cycle 1,2%}{% endcapture%}
+                            {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                        {% endif%}
+                    </div>
+                    <div class="content-gallery">
+                        <p>{{ section.settings.benefit5 }}</p>
+                    </div>
+                </div> <!-- /.gallery-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-xs-6 col-sm-2 col-md-2">
+                <div class="gallery-item">
+                    <div class="image">
+                      {%if section.settings.image6 != blank %}
+                        <img src="{{ section.settings.image6 | img_url: 'master' }}" alt="{{ section.settings.image6.alt }}">
+                        {% else %}
+                            {% capture current%}{% cycle 1,2%}{% endcapture%}
+                            {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                        {% endif%}
+                    </div>
+                    <div class="content-gallery">
+                        <p>{{ section.settings.benefit6 }}</p>
+                    </div>
+                </div> <!-- /.gallery-item -->
+            </div> <!-- /.col-md-2 -->
+            <div class="col-xs-6 col-sm-2 col-md-2">
+                <div class="gallery-item">
+                    <div class="image">
+                      {%if section.settings.image7 != blank %}
+                        <img src="{{ section.settings.image7 | img_url: 'master' }}" alt="{{ section.settings.image7.alt }}">
+                        {% else %}
+                            {% capture current%}{% cycle 1,2%}{% endcapture%}
+                            {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                        {% endif%}
+                    </div>
+                    <div class="content-gallery">
+                        <p>{{ section.settings.benefit7 }}</p>
+                    </div>
+                </div> <!-- /.gallery-item -->
+            </div> <!-- /.col-md-2 -->
+        </div>
+</section>
+
+{% schema %}
+    {
+        "name": "Benefits",
+        "class": "benefits-section",
+        "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "default": "Example Heading",
+                        "label": "Heading Title"
+                    },
+                    {
+                        "type": "text",
+                        "id": "subtitle",
+                        "default": "Example Subtitle",
+                        "label": "Subtitle Title"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "image1",
+                        "label": "Benefit 1 Image"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "benefit1",
+                        "default": "<p>Example Paragraph</p>",
+                        "label": "Benefit 1 Description"
+                    },
+                                        {
+                        "type": "image_picker",
+                        "id": "image2",
+                        "label": "Benefit 2 Image"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "benefit2",
+                        "default": "<p>Example Paragraph</p>",
+                        "label": "Benefit 2 Description"
+                    },
+                                        {
+                        "type": "image_picker",
+                        "id": "image3",
+                        "label": "Benefit 3 Image"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "benefit3",
+                        "default": "<p>Example Paragraph</p>",
+                        "label": "Benefit 3 Description"
+                    },
+                                        {
+                        "type": "image_picker",
+                        "id": "image4",
+                        "label": "Benefit 4 Image"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "benefit4",
+                        "default": "<p>Example Paragraph</p>",
+                        "label": "Benefit 4 Description"
+                    },
+                                        {
+                        "type": "image_picker",
+                        "id": "image5",
+                        "label": "Benefit 5 Image"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "benefit5",
+                        "default": "<p>Example Paragraph</p>",
+                        "label": "Benefit 5 Description"
+                    },
+                                        {
+                        "type": "image_picker",
+                        "id": "image6",
+                        "label": "Benefit 6 Image"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "benefit6",
+                        "default": "<p>Example Paragraph</p>",
+                        "label": "Benefit 6 Description"
+                    },
+                                        {
+                        "type": "image_picker",
+                        "id": "image7",
+                        "label": "Benefit 7 Image"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "benefit7",
+                        "default": "<p>Example Paragraph</p>",
+                        "label": "Benefit 7 Description"
+                    }
+                    ],
+                "presets":
+                [
+                    {
+                        "category": "Benefits",
+                        "name": "Benefits"
+                    }
+                ]
+    }
+{% endschema %}

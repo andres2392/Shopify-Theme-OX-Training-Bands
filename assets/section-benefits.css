@@ -1,0 +1,111 @@
+
+
+/*------------------------------------------------------
+	Gallery Styles 
+--------------------------------------------------------*/
+.benefits-section h2,h4 {
+    margin-left: 3.5rem;
+    justify-content: flex-start;
+}
+
+.benefits-section .benefit-title{
+  font-weight: bold;
+  color: #000;
+}
+
+.benefits-section h4 {
+  border-left: thick solid #FEE503;
+  padding-left: 10px;
+  
+}
+
+.gallery-item {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    margin-top: 4rem;
+  }
+
+
+.gallery-item {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+  .gallery-item .content-gallery {
+    text-align: center;
+  }
+  .gallery-item .content-gallery p {
+    color: #000;
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 5px;
+    padding-bottom: 5px;
+    display: inline-block;
+  }
+  .gallery-item img {
+    width: 100%;
+  }
+  
+  .gallery-item:hover {
+      transform: translateY(-1rem);
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+    border-radius: 20%;
+  }
+  
+  
+  
+  /*------------------------------------------------------
+    RESPONSIVE STYLING 
+  --------------------------------------------------------*/
+  @media only screen and (max-width: 1000px) {
+    .site-header .main-navigation {
+      padding: 0;
+    }
+    .site-header .main-navigation .container {
+      width: 100%;
+    }
+  
+    .responsive-menu {
+      display: block;
+    }
+  
+    .main_menu {
+      display: none;
+    }
+  
+    .services #icons .icon-item span,
+    .about #icons-about .icon-item span {
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 760px) {
+    .services #icons {
+      margin-top: 50px;
+    }
+  
+    .services #icons .icon-item span {
+      display: inline-block;
+      margin: 0 0 0 20px;
+    }
+    
+    .about #icons-about {
+      margin-top: 50px;
+    }
+  
+    .about #icons-about .icon-item span {
+      display: inline-block;
+      margin: 0 0 0 20px;
+    }
+  }
+
+  
+  
+
+  

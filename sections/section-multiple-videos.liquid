@@ -1,0 +1,163 @@
+
+ {{ 'section-multiple-videos.css' | asset_url | stylesheet_tag }}
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<section class="section-multi-vid">
+	<div class="container-fluid">
+    	<h2 class="h2 title multi-vid-title">{{ section.settings.title }}</h2>
+		<h4 class="h4">  {{section.settings.subtitle }}</h4>
+		<div class="container row">
+			<div class="card column">
+				<div class="card-body card">
+					<div class="img-btn">
+					<button href="{{ section.settings.button_link1 }}" class="fa-solid fa-play btn-play"></button>
+                      {%if section.settings.image1 != blank %}
+                            <img class="card-img-top" src="{{ section.settings.image1 | img_url: 'master' }}" alt="{{ section.settings.image1.alt }}">
+                        {% else %}
+                            {% capture current%}{% cycle 1,2%}{% endcapture%}
+                            {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                        {% endif%}
+					<a href="{{ section.settings.button_link1 }}" class="btns button button--primary">{{ section.settings.button_label1 }}</a>
+					</div>
+				</div>
+			</div>
+			<div class="card column">
+				<div class="card-body card">
+					<div class="img-btn">
+					<button href="{{ section.settings.button_link2 }}" class="fa-solid fa-play btn-play"></button>
+                    {%if section.settings.image2 != blank %}
+                        <img class="card-img-top" src="{{ section.settings.image2 | img_url: 'master' }}" alt="{{ section.settings.image2.alt }}">
+                    {% else %}
+                        {% capture current%}{% cycle 1,2%}{% endcapture%}
+                        {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                    {% endif%}
+					<a href="{{ section.settings.button_link2 }}" class="btns button button--primary">{{ section.settings.button_label2 }}</a>
+					</div>
+				</div>
+			</div>
+			<div class="card column">
+				<div class="card-body card">
+					<div class="img-btn">
+					<button href="{{ section.settings.button_link3 }}" class="fa-solid fa-play btn-play"></button>
+                    {%if section.settings.image3 != blank %}
+                        <img class="card-img-top" src="{{ section.settings.image3 | img_url: 'master' }}" alt="{{ section.settings.image3.alt }}">
+                    {% else %}
+                        {% capture current%}{% cycle 1,2%}{% endcapture%}
+                        {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                    {% endif%}
+					<a href="{{ section.settings.button_link3 }}" class="btns button button--primary">{{ section.settings.button_label3 }}</a>
+					</div>
+				</div>
+			</div>
+			<div class="card column">
+				<div class="card-body card">
+					<div class="img-btn">
+					<button href="{{ section.settings.button_link4 }}" class="fa-solid fa-play btn-play"></button>
+                    {%if section.settings.image4 != blank %}
+                        <img class="card-img-top" src="{{ section.settings.image4 | img_url: 'master' }}" alt="{{ section.settings.image4.alt }}">
+                    {% else %}
+                        {% capture current%}{% cycle 1,2%}{% endcapture%}
+                        {{ 'lifestyle-' | append: current | placeholder_svg_tag: 'placeholder-svg' }}
+                    {% endif%}
+					<a href="{{ section.settings.button_link4 }}" class="btns button button--primary">{{ section.settings.button_label4 }}</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+{% schema %}
+    {
+        "name": "Multiple Videos",
+        "class": "multiple-video-section",
+        "settings": [
+                {
+                    "type": "text",
+                    "id": "title",
+                    "default": "Example Heading",
+                    "label": "Heading Title"
+                },
+                {
+                    "type": "text",
+                    "id": "subtitle",
+                    "default": "Example Subtitle",
+                    "label": "Subtitle Title"
+                },
+                {
+                "type": "image_picker",
+                "id": "image1",
+                "label": "First Image"
+                },
+                {
+                    "type": "text",
+                    "id": "button_label1",
+                    "default": "Button",
+                    "label": "First Button Label"
+                },
+                {
+                    "type": "url",
+                    "id": "button_link1",
+                    "label": "First Button Link"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image2",
+                    "label": "Second Image"
+                },
+                {
+                    "type": "text",
+                    "id": "button_label2",
+                    "default": "Button",
+                    "label": "Second Button Label"
+                },
+                {
+                    "type": "url",
+                    "id": "button_link2",
+                    "label": "Second Button Link"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image3",
+                    "label": "Third Image"
+                },
+                {
+                    "type": "text",
+                    "id": "button_label3",
+                    "default": "Button",
+                    "label": "Third Button Label"
+                },
+                {
+                    "type": "url",
+                    "id": "button_link3",
+                    "label": "Third Button Link"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image4",
+                    "label": "Fourth Image"
+                },
+                {
+                    "type": "text",
+                    "id": "button_label4",
+                    "default": "Button",
+                    "label": "Fourth Button Label"
+                },
+                {
+                    "type": "url",
+                    "id": "button_link4",
+                    "label": "Fourth Button Link"
+                }
+        
+            ],
+        "presets": [
+            {
+                "category": "Multiple Videos",
+                "name": "Multiple Videos"
+            }
+        ]
+
+    }
+{% endschema %}
